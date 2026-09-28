@@ -135,13 +135,11 @@
   .burger span{display:block;width:18px;height:2px;background:var(--text);position:relative}
   .burger span::before,.burger span::after{content:"";position:absolute;left:0;width:18px;height:2px;background:var(--text)}
   .burger span::before{top:-5px}.burger span::after{top:5px}
-  .hero-copy{grid-column:1}
-  .hero-media{grid-column:2;grid-row:1}
-  @media(max-width:999px){
-    .hero-inner{grid-template-columns:1fr}
-    .hero-media{grid-row:auto;order:-1;height:clamp(240px,52vw,420px)}
+  @media(min-width:1000px){
+    nav.desk{display:flex}.burger{display:none}
+    .hero-copy{grid-column:1}
+    .hero-media{grid-column:2;grid-row:1}
   }
-  @media(min-width:1000px){nav.desk{display:flex}.burger{display:none}}
 
   .mobile-nav{position:fixed;inset:0;z-index:160;background:var(--navy-3);color:var(--on-navy);padding:24px;display:none;flex-direction:column}
   .mobile-nav.open{display:flex}
@@ -150,21 +148,22 @@
   .mobile-nav .mnav-cta{margin-top:26px;justify-content:center}
 
   /* ============ HERO ============ */
-  .hero{position:relative;background:var(--paper);color:var(--text);overflow:hidden;padding-block:clamp(40px,6vw,72px) clamp(48px,7vw,88px)}
-  .hero-inner{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,4.5vw,64px);align-items:end}
-  .hero-copy{position:relative;z-index:2}
-  .hero-media{position:relative;height:clamp(340px,58vh,620px);overflow:hidden}
-  .hero-media img{will-change:transform;width:100%;height:100%;object-fit:cover}
-  .hero .kicker{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);padding:9px 18px;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text);background:var(--card)}
+  .hero{position:relative;color:var(--on-navy);overflow:hidden;min-height:100svh;display:flex;align-items:flex-end}
+  .hero-bg{position:absolute;inset:0;z-index:0;background:var(--navy-3)}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;will-change:transform}
+  .hero-veil{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(5,6,5,.08) 0%,rgba(5,6,5,.18) 42%,rgba(5,6,5,.88) 100%)}
+  .hero-inner{position:relative;z-index:2;width:100%;padding-block:clamp(110px,22vh,190px) clamp(56px,8vh,96px)}
+  .hero-copy{max-width:46rem}
+  .hero .kicker{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.35);padding:9px 18px;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--on-navy);background:rgba(8,10,8,.35);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
   .hero .kicker i{width:7px;height:7px;background:var(--lime);flex:none}
-  .hero h1{margin-top:28px;font-size:clamp(3rem,9.4vw,7.6rem);line-height:.98;max-width:12ch;font-weight:700}
+  .hero h1{margin-top:28px;font-size:clamp(2.6rem,9.4vw,7.6rem);line-height:.98;max-width:12ch;font-weight:700;color:var(--on-navy);overflow-wrap:break-word}
   .hero h1 em{font-style:italic;color:var(--gold);font-weight:900;letter-spacing:-.02em}
   .hero h1 .ch{display:inline-block;will-change:transform}
-  .hero p.lede{margin-top:26px;max-width:44ch;color:var(--muted);font-size:clamp(1rem,2.2vw,1.15rem);line-height:1.7}
+  .hero p.lede{margin-top:26px;max-width:44ch;color:var(--on-navy-muted);font-size:clamp(1rem,2.2vw,1.15rem);line-height:1.7}
   .hero-ctas{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
-  .hero-note{margin-top:34px;display:flex;gap:26px;flex-wrap:wrap;font-size:.78rem;letter-spacing:.06em;color:var(--muted);text-transform:uppercase}
-  .hero-note b{color:var(--text);font-weight:700}
-  .scroll-cue{position:absolute;bottom:26px;right:24px;z-index:2;font-size:.62rem;letter-spacing:.32em;text-transform:uppercase;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:10px;writing-mode:vertical-rl}
+  .hero-note{margin-top:34px;display:flex;gap:26px;flex-wrap:wrap;font-size:.78rem;letter-spacing:.06em;color:var(--on-navy-muted);text-transform:uppercase}
+  .hero-note b{color:var(--on-navy);font-weight:700}
+  .scroll-cue{position:absolute;bottom:26px;right:24px;z-index:2;font-size:.62rem;letter-spacing:.32em;text-transform:uppercase;color:var(--on-navy-muted);display:flex;flex-direction:column;align-items:center;gap:10px;writing-mode:vertical-rl}
   .scroll-cue i{width:1px;height:44px;background:linear-gradient(var(--gold),transparent);display:block}
 
   /* ============ MARQUEE ============ */
@@ -403,15 +402,16 @@
 
 <!-- HERO -->
 <section class="hero" id="top">
+  <div class="hero-bg"><img id="heroImg" src="images/sports-court.jpg" alt="SVIS Bangalore students on the school's outdoor sports court."></div>
+  <div class="hero-veil"></div>
   <div class="wrap hero-inner">
-    <div class="hero-media duo deep"><img id="heroImg" class="gen" data-kind="campus" data-tint="deep" data-seed="7" alt=""></div>
     <div class="hero-copy">
     <span class="kicker" data-hero><i></i> Admissions open · 2026–27</span>
     <h1 id="heroH">Nurturing Excellence and <em>Compassionate Leadership</em></h1>
     <p class="lede" data-hero>Give your child the opportunity to thrive in a dynamic and inclusive learning environment that builds confidence and curiosity.</p>
     <div class="hero-ctas" data-hero>
       <a class="btn btn-gold" href="#tour">Schedule a Tour</a>
-      <a class="btn btn-line" href="#academics">Explore Academics</a>
+      <a class="btn btn-ghost" href="#academics">Explore Academics</a>
     </div>
     <div class="hero-note" data-hero>
       <span><b>CBSE</b> affiliated</span>
@@ -433,7 +433,7 @@
 <!-- CHAPTER 01 · MISSION -->
 <section class="mission" id="about">
   <div class="wrap">
-    <p class="sh-note solo" data-reveal><b>01 · Mission &amp; Values</b>In the school's own words, from svisbangalore.com.</p>
+    <p class="sh-note solo" data-reveal>In the school's own words, from svisbangalore.com.</p>
     <p class="m-text" id="missionText">At SVIS, we inspire curiosity, creativity, and innovation. Guided by truth, respect, and excellence, we empower every child to make a meaningful impact with integrity and purpose.</p>
     <a class="m-link" href="#">Read our Vision &amp; Mission</a>
     <div class="m-vals">
@@ -447,7 +447,7 @@
   <div class="wrap">
     <header class="sh" data-reveal>
       <h2 class="sh-h">Four reasons <span class="hl">families choose</span> us</h2>
-      <p class="sh-note"><b>02 · Why SVIS</b>Four reasons, in the school's own words.</p>
+      <p class="sh-note">Four reasons, in the school's own words.</p>
     </header>
   </div>
   <div class="wrap stack">
@@ -459,7 +459,7 @@
         <p>SVIS follows a CBSE curriculum enriched with real-world learning and a global perspective to prepare students for future challenges.</p>
         <a class="p-link" href="#">Explore academics</a>
       </div>
-      <div class="duo"><span class="ptag">Photo placeholder</span><img class="gen" data-kind="campus" data-tint="navy" data-seed="31" alt="" loading="lazy"><div class="grain"></div></div>
+      <div class="duo"><img class="gen" src="images/primary-classroom.jpg" alt="Students writing in their notebooks during a classroom lesson at SVIS." loading="lazy"><div class="grain"></div></div>
     </article>
     <article class="pillar">
       <span class="p-num">02</span>
@@ -469,7 +469,7 @@
         <p>Our faculty are passionate mentors who guide, inspire, and support each learner's individual journey with care and commitment.</p>
         <a class="p-link" href="#">Meet our faculty</a>
       </div>
-      <div class="duo green"><span class="ptag">Photo placeholder</span><img class="gen" data-kind="people" data-tint="green" data-seed="32" alt="" loading="lazy"><div class="grain"></div></div>
+      <div class="duo green"><img class="gen" src="images/pre-primary-teacher.jpg" alt="An SVIS teacher sharing a warm high-five with two young Pre-Primary children." loading="lazy"><div class="grain"></div></div>
     </article>
     <article class="pillar">
       <span class="p-num">03</span>
@@ -479,7 +479,7 @@
         <p>Spacious classrooms, digital learning tools, science and computer labs, and sports facilities designed for exploration and innovation.</p>
         <a class="p-link" href="#">Tour the campus</a>
       </div>
-      <div class="duo navy"><span class="ptag">Photo placeholder</span><img class="gen" data-kind="study" data-tint="deep" data-seed="33" alt="" loading="lazy"><div class="grain"></div></div>
+      <div class="duo navy"><img class="gen" src="images/science-lab.jpg" alt="SVIS students examining a blue solution in a round-bottom flask during a science lab experiment." loading="lazy"><div class="grain"></div></div>
     </article>
     <article class="pillar">
       <span class="p-num">04</span>
@@ -489,7 +489,7 @@
         <p>We instill values of empathy, respect, and responsibility, helping students grow into confident, compassionate global citizens.</p>
         <a class="p-link" href="#">Our philosophy</a>
       </div>
-      <div class="duo deep"><span class="ptag">Photo placeholder</span><img class="gen" data-kind="leaf" data-tint="brand" data-seed="34" alt="" loading="lazy"><div class="grain"></div></div>
+      <div class="duo deep"><img class="gen" src="images/sanctuary-prayer.jpg" alt="SVIS students gathered in prayer during Morning Assembly." loading="lazy"><div class="grain"></div></div>
     </article>
   </div>
 </section>
@@ -499,7 +499,7 @@
   <div class="wrap">
     <header class="sh" data-reveal>
       <h2 class="sh-h">One journey, <span class="hl">four stages</span></h2>
-      <p class="sh-note"><b>03 · Academics</b>A balanced blend of inquiry-based learning, hands-on experiences, STEM activities, and values-driven education.</p>
+      <p class="sh-note">A balanced blend of inquiry-based learning, hands-on experiences, STEM activities, and values-driven education.</p>
     </header>
     <div class="ledger">
       <a class="srow" href="#" data-reveal>
@@ -510,7 +510,7 @@
           <p class="sr-desc">Each day begins with songs, stories, art, and theme-based activities that make learning joyful and meaningful. Children explore through hands-on experiences that build curiosity and imagination while nurturing social and emotional growth.</p>
           <span class="sr-more">Know more</span>
         </span>
-        <span class="duo"><img class="gen" data-kind="people" data-tint="brand" data-seed="41" alt="" loading="lazy"><div class="grain"></div></span>
+        <span class="duo"><img class="gen" src="images/pre-primary-2.jpg" alt="A teacher guiding two Pre-Primary children through a worksheet at SVIS." loading="lazy"><div class="grain"></div></span>
         <span class="sr-arrow">→</span>
       </a>
       <a class="srow" href="#" data-reveal>
@@ -521,7 +521,7 @@
           <p class="sr-desc">Our syllabus is aligned with the CBSE curriculum. Trained, experienced, and committed faculty work to ensure an engaging, interactive, and vibrant learning environment. A usual day includes academic sessions, music, dance, sport, and other extracurricular activities to keep students eager to come back for more every day.</p>
           <span class="sr-more">Know more</span>
         </span>
-        <span class="duo green"><img class="gen" data-kind="leaf" data-tint="green" data-seed="42" alt="" loading="lazy"><div class="grain"></div></span>
+        <span class="duo green"><img class="gen" src="images/classroom-focus.jpg" alt="An SVIS Primary student concentrating on her notebook in class." loading="lazy"><div class="grain"></div></span>
         <span class="sr-arrow">→</span>
       </a>
       <a class="srow" href="#" data-reveal>
@@ -532,7 +532,7 @@
           <p class="sr-desc">The curriculum builds strong conceptual foundations while encouraging practical application. Students explore English, Mathematics, Science, Social Science, and Computer Applications, along with Art, Music, and Physical Education. A balanced blend of academics, projects, and digital learning nurtures curiosity, creativity, and independent thinking.</p>
           <span class="sr-more">Know more</span>
         </span>
-        <span class="duo navy"><img class="gen" data-kind="study" data-tint="navy" data-seed="43" alt="" loading="lazy"><div class="grain"></div></span>
+        <span class="duo navy"><img class="gen" src="images/robotics-lab.jpg" alt="Two SVIS Middle School students building a motorised model together in the Robotics Lab." loading="lazy"><div class="grain"></div></span>
         <span class="sr-arrow">→</span>
       </a>
       <a class="srow" href="#" data-reveal>
@@ -543,7 +543,7 @@
           <p class="sr-desc">The program prepares students for the CBSE Board Examinations through a focused yet holistic approach. Emphasis is placed on academic excellence, analytical thinking, and value-based learning. Through career awareness, collaboration, and community engagement, students grow into confident, responsible, and future-ready individuals.</p>
           <span class="sr-more">Know more</span>
         </span>
-        <span class="duo deep"><img class="gen" data-kind="campus" data-tint="gold" data-seed="44" alt="" loading="lazy"><div class="grain"></div></span>
+        <span class="duo deep"><img class="gen" src="images/secondary-classroom.jpg" alt="SVIS Secondary students focused on written classwork at their desks." loading="lazy"><div class="grain"></div></span>
         <span class="sr-arrow">→</span>
       </a>
     </div>
@@ -553,17 +553,16 @@
 <!-- CHAPTER 04 · CAMPUS -->
 <section class="campus" id="campus">
   <div class="campus-media" id="campusMedia">
-    <div class="duo deep" style="position:absolute;inset:0"><img id="campusImg" class="gen" data-kind="campus" data-tint="navy" data-seed="21" alt="Campus placeholder"><div class="veil"></div></div>
-    <span class="ptag" style="position:absolute;top:18px;left:24px;z-index:3">Photo placeholder, replace with campus photography</span>
+    <div class="duo deep" style="position:absolute;inset:0"><img id="campusImg" class="gen" src="images/hero-assembly-hall.jpg" alt="The atrium at SVIS Bangalore, beneath the words 'Kindling The Love For Learning.'"><div class="veil"></div></div>
     <div class="campus-cap">
-      <h3>A green campus in Bettahalsur, Yelahanka</h3>
+      <h3>A landmark campus at Bettahalsur, Yelahanka</h3>
       <span class="igbc">IGBC Platinum ✓</span>
     </div>
   </div>
   <div class="wrap campus-body">
     <header class="sh" data-reveal>
       <h2 class="sh-h">A vibrant campus, <span class="hl">built for every student</span></h2>
-      <p class="sh-note"><b>04 · Campus</b>Modern classrooms, state-of-the-art labs and spacious sports facilities at Bettahalsur Village, Jala Hobli, Yelahanka.</p>
+      <p class="sh-note">Modern classrooms, state-of-the-art labs and spacious sports facilities at Bettahalsur Village, Jala Hobli, Yelahanka.</p>
     </header>
     <div class="campus-facts" data-reveal>
       <div><b>Modern classrooms</b><span>An ideal environment for learning</span></div>
@@ -580,42 +579,42 @@
   <div class="wrap">
     <header class="sh" data-reveal>
       <h2 class="sh-h">A glimpse into <span class="hl">our school life</span></h2>
-      <p class="sh-note"><b>05 · Life at SVIS</b>Photo placeholders. Replace with SVIS photography from assemblies, sport, art and the annual day.</p>
+      <p class="sh-note">Real SVIS photography from assemblies, sport and the library.</p>
     </header>
   </div>
   <div class="g-track" id="gTrack">
     <figure class="slide">
-      <div class="duo"><span class="ptag">Placeholder</span><img class="gen" data-kind="people" data-tint="brand" data-seed="51" alt="" loading="lazy"><div class="grain"></div></div>
+      <div class="duo"><img class="gen" src="images/sanctuary-assembly-2.jpg" alt="SVIS students gathered for Morning Assembly beneath the atrium's oval skylight." loading="lazy"><div class="grain"></div></div>
       <figcaption><b>Morning Assembly</b><span>Every day begins together</span></figcaption>
     </figure>
     <figure class="slide">
-      <div class="duo green"><span class="ptag">Placeholder</span><img class="gen" data-kind="campus" data-tint="green" data-seed="52" alt="" loading="lazy"><div class="grain"></div></div>
-      <figcaption><b>Sports Day</b><span>House spirit on the field</span></figcaption>
+      <div class="duo green"><img class="gen" src="images/library-shelving.jpg" alt="An SVIS student browsing the biography shelf in the library." loading="lazy"><div class="grain"></div></div>
+      <figcaption><b>Reading Corner</b><span>A book for every interest</span></figcaption>
     </figure>
     <figure class="slide">
-      <div class="duo navy"><span class="ptag">Placeholder</span><img class="gen" data-kind="study" data-tint="navy" data-seed="53" alt="" loading="lazy"><div class="grain"></div></div>
-      <figcaption><b>Music &amp; Arts</b><span>Amphitheatre evenings</span></figcaption>
+      <div class="duo navy"><img class="gen" src="images/climbing-wall.jpg" alt="Three SVIS students at the climbing wall." loading="lazy"><div class="grain"></div></div>
+      <figcaption><b>Adventure Wall</b><span>Climbing and play</span></figcaption>
     </figure>
     <figure class="slide">
-      <div class="duo deep"><span class="ptag">Placeholder</span><img class="gen" data-kind="leaf" data-tint="deep" data-seed="54" alt="" loading="lazy"><div class="grain"></div></div>
+      <div class="duo deep"><img class="gen" src="images/science-lab-2.jpg" alt="SVIS students at work on a science lab experiment." loading="lazy"><div class="grain"></div></div>
       <figcaption><b>Science Labs</b><span>Learning by doing</span></figcaption>
     </figure>
     <figure class="slide">
-      <div class="duo"><span class="ptag">Placeholder</span><img class="gen" data-kind="people" data-tint="brand" data-seed="55" alt="" loading="lazy"><div class="grain"></div></div>
-      <figcaption><b>Annual Day</b><span>Every child on stage</span></figcaption>
+      <div class="duo"><img class="gen" src="images/library-reading.jpg" alt="Two SVIS Middle School students reading together at a library table." loading="lazy"><div class="grain"></div></div>
+      <figcaption><b>The Library</b><span>A love for reading</span></figcaption>
     </figure>
     <figure class="slide">
-      <div class="duo green"><span class="ptag">Placeholder</span><img class="gen" data-kind="campus" data-tint="green" data-seed="56" alt="" loading="lazy"><div class="grain"></div></div>
-      <figcaption><b>Green Campus</b><span>IGBC Platinum certified</span></figcaption>
+      <div class="duo green"><img class="gen" src="images/teacher-support.jpg" alt="A teacher giving two SVIS students individual attention at their desk." loading="lazy"><div class="grain"></div></div>
+      <figcaption><b>Individual Attention</b><span>Support whenever it's needed</span></figcaption>
     </figure>
   </div>
-  <p class="g-hint">Swipe → · placeholder imagery, real photography from SVIS to follow</p>
+  <p class="g-hint">Swipe → · real SVIS photography</p>
 </section>
 
 <!-- STATS -->
 <section class="stats on-navy" style="border-top:1px solid rgba(255,255,255,.12);padding-top:clamp(56px,8vw,90px)">
   <div class="wrap">
-    <p class="sh-note solo" data-reveal style="margin-bottom:38px"><b>Record · 2025–26</b>Board results, competition wins and enrolment. Figures to be confirmed by SVIS.</p>
+    <p class="sh-note solo" data-reveal style="margin-bottom:38px">Board results, competition wins and enrolment. Figures to be confirmed by SVIS.</p>
     <div class="stats-grid">
       <div class="stat" data-reveal>
         <div class="n"><span data-count="100">0</span><small>%</small></div>
@@ -644,7 +643,7 @@
 <!-- CHAPTER 06 · VOICES -->
 <section class="testi">
   <div class="wrap">
-    <p class="sh-note solo" data-reveal style="margin-bottom:38px"><b>06 · Parent Voices</b>Quotes taken directly from svisbangalore.com.</p>
+    <p class="sh-note solo" data-reveal style="margin-bottom:38px">Quotes taken directly from svisbangalore.com.</p>
     <div class="t-stage" id="tStage">
       <article class="t-card">
         <p class="q">"SVIS is not just the school but an EMOTION for us as we are associated with the school and a second HOME for our little one, looking forward to see our little one grow with the school STRONG, BRAVE AND INDEPENDENT."</p>
@@ -680,7 +679,7 @@
 <!-- BLOG LEDGER -->
 <section style="padding-top:0">
   <div class="wrap">
-    <p class="sh-note solo" data-reveal style="margin-bottom:38px"><b>Journal</b>Headlines below are drawn from svisbangalore.com sections. Blog posts awaited from SVIS.</p>
+    <p class="sh-note solo" data-reveal style="margin-bottom:38px">Headlines below are drawn from svisbangalore.com sections. Blog posts awaited from SVIS.</p>
     <div class="blog-rows">
       <a class="b-row" href="#" data-reveal>
         <span class="b-meta">Mission</span>
@@ -843,6 +842,7 @@
         '</defs>'+s+'</svg>');
     }
     document.querySelectorAll('.duo img.gen').forEach(function(img, i){
+      if(img.getAttribute('src')) return; // real photo already placed, don't overwrite
       img.src = scene(img.dataset.kind, img.dataset.tint, parseInt(img.dataset.seed,10) || i*7+3);
     });
   })();
