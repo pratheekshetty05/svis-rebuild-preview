@@ -56,14 +56,9 @@
   .sh{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,320px);gap:clamp(24px,4vw,72px);align-items:end}
   .sh-h{font-size:clamp(2.1rem,5.2vw,3.9rem);line-height:1.06;letter-spacing:-.02em;font-weight:800;max-width:22ch}
   .sh-h .hl{background:linear-gradient(transparent 58%,color-mix(in srgb,var(--gold) 34%,transparent) 58%);-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:0 .06em}
-  .sh-note{font-size:.82rem;line-height:1.65;color:var(--muted);border-left:2px solid var(--gold);padding-left:16px;margin-bottom:.4em}
-  .sh-note b{display:block;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;font-weight:800;color:var(--gold);margin-bottom:7px}
-  .sh-note.solo{max-width:34ch}
-  .on-navy .sh-note{color:var(--on-navy-muted)}
   :root[data-theme="dark"] .sh-h .hl{background:linear-gradient(transparent 58%,color-mix(in srgb,var(--gold) 30%,transparent) 58%)}
   @media(max-width:860px){
     .sh{grid-template-columns:1fr;gap:18px}
-    .sh-note{margin-bottom:0}
   }
 
   .section-h{font-size:clamp(2.1rem,5.2vw,3.9rem);line-height:1.06;letter-spacing:-.02em;font-weight:800;max-width:22ch}
@@ -439,7 +434,6 @@
 <!-- CHAPTER 01 · MISSION -->
 <section class="mission" id="about">
   <div class="wrap">
-    <p class="sh-note solo" data-reveal>In the school's own words, from svisbangalore.com.</p>
     <p class="m-text" id="missionText">At SVIS, we inspire curiosity, creativity, and innovation. Guided by truth, respect, and excellence, we empower every child to make a meaningful impact with integrity and purpose.</p>
     <a class="m-link" href="#">Read our Vision &amp; Mission</a>
     <div class="m-vals">
@@ -453,7 +447,6 @@
   <div class="wrap">
     <header class="sh" data-reveal>
       <h2 class="sh-h">Four reasons <span class="hl">families choose</span> us</h2>
-      <p class="sh-note">Four reasons, in the school's own words.</p>
     </header>
   </div>
   <div class="wrap stack">
@@ -505,7 +498,6 @@
   <div class="wrap">
     <header class="sh" data-reveal>
       <h2 class="sh-h">One journey, <span class="hl">four stages</span></h2>
-      <p class="sh-note">A balanced blend of inquiry-based learning, hands-on experiences, STEM activities, and values-driven education.</p>
     </header>
     <div class="ledger">
       <a class="srow" href="#" data-reveal>
@@ -568,7 +560,6 @@
   <div class="wrap campus-body">
     <header class="sh" data-reveal>
       <h2 class="sh-h">A vibrant campus, <span class="hl">built for every student</span></h2>
-      <p class="sh-note">Modern classrooms, state-of-the-art labs and spacious sports facilities at Bettahalsur Village, Jala Hobli, Yelahanka.</p>
     </header>
     <div class="campus-facts" data-reveal>
       <div><b>Modern classrooms</b><span>An ideal environment for learning</span></div>
@@ -585,7 +576,6 @@
   <div class="wrap">
     <header class="sh" data-reveal>
       <h2 class="sh-h">A glimpse into <span class="hl">our school life</span></h2>
-      <p class="sh-note">Real SVIS photography from assemblies, sport and the library.</p>
     </header>
   </div>
   <div class="g-track" id="gTrack">
@@ -620,7 +610,6 @@
 <!-- STATS -->
 <section class="stats on-navy" style="border-top:1px solid rgba(255,255,255,.12);padding-top:clamp(56px,8vw,90px)">
   <div class="wrap">
-    <p class="sh-note solo" data-reveal style="margin-bottom:38px">Board results, competition wins and enrolment. Figures to be confirmed by SVIS.</p>
     <div class="stats-grid">
       <div class="stat" data-reveal>
         <div class="n"><span data-count="100">0</span><small>%</small></div>
@@ -649,7 +638,6 @@
 <!-- CHAPTER 06 · VOICES -->
 <section class="testi">
   <div class="wrap">
-    <p class="sh-note solo" data-reveal style="margin-bottom:38px">Quotes taken directly from svisbangalore.com.</p>
     <div class="t-stage" id="tStage">
       <article class="t-card">
         <p class="q">"SVIS is not just the school but an EMOTION for us as we are associated with the school and a second HOME for our little one, looking forward to see our little one grow with the school STRONG, BRAVE AND INDEPENDENT."</p>
@@ -685,7 +673,6 @@
 <!-- BLOG LEDGER -->
 <section style="padding-top:0">
   <div class="wrap">
-    <p class="sh-note solo" data-reveal style="margin-bottom:38px">Headlines below are drawn from svisbangalore.com sections. Blog posts awaited from SVIS.</p>
     <div class="blog-rows">
       <a class="b-row" href="#" data-reveal>
         <span class="b-meta">Mission</span>
@@ -777,6 +764,7 @@
 
   /* testimonial rotator, always runs */
   (function(){
+    var stage = document.getElementById('tStage');
     var cards = document.querySelectorAll('#tStage .t-card');
     var dots = document.querySelectorAll('#tDots button');
     if(!cards.length) return;
@@ -790,10 +778,22 @@
       });
       dots.forEach(function(d, k){ d.classList.toggle('on', k === i); });
     }
+    function sizeStage(refresh){
+      var max = 0;
+      cards.forEach(function(c){ max = Math.max(max, c.scrollHeight); });
+      if(max && stage.style.minHeight !== max + 'px'){
+        stage.style.minHeight = max + 'px';
+        if(refresh && window.ScrollTrigger) ScrollTrigger.refresh();
+      }
+    }
     cards.forEach(function(c, k){ c.style.transition = 'opacity .5s, transform .5s'; c.style.zIndex = String(cards.length - k); });
     dots.forEach(function(d, k){ d.addEventListener('click', function(){ show(k); restart(); }); });
     function restart(){ if(timer) clearInterval(timer); if(!reduced) timer = setInterval(function(){ show(i + 1); }, 5400); }
+    sizeStage(false);
     show(0); restart();
+    var resizeT;
+    window.addEventListener('resize', function(){ clearTimeout(resizeT); resizeT = setTimeout(function(){ sizeStage(true); }, 150); });
+    if(document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ sizeStage(true); });
   })();
 
   /* generated duotone scene placeholders, swap with real photos later */
