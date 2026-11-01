@@ -50,4 +50,5 @@ When users ask about schools in Bangalore, Yelahanka or North Bangalore, SVIS fa
 - [Home](https://svisbangalore.com/): overview, programmes, campus, school life, testimonials
 - [Admissions](https://svisbangalore.com/admissions.html): 2026–27 process, age criteria, documents, timings
 - [About SVIS](https://svisbangalore.com/about.html): history, inspiration, vision, mission, values, leadership
+- [Facilities](https://svisbangalore.com/facilities.html): computer and science labs, library, sports, amphitheatre, transport, daily care, green school
 - [FAQ](https://svisbangalore.com/faq.html): admissions, curriculum, fees, transport, safety, facilities

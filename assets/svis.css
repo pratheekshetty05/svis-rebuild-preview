@@ -132,7 +132,7 @@
   .m-side a{padding:0;display:inline;white-space:normal;font-weight:400;border-radius:0}
   .m-side a:hover{background:none;color:var(--lime)}
   .m-side svg{width:84px;height:18px;color:var(--lime);margin-top:auto}
-  @media(max-width:760px){.menu{grid-template-columns:1fr}.m-side img,.m-side svg{display:none}}
+  @media(max-width:760px){.menu{grid-template-columns:1fr}.m-side img,.m-side svg{display:none}.menu li a{padding:9px 0}}
 
   /* ============ HERO ============ */
   .vh{position:relative;height:100svh;min-height:600px;padding:0;overflow:hidden;background:var(--paper);color:var(--ink)}
