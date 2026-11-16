@@ -129,21 +129,12 @@
     });
   });
 
-  /* guide: background tint while the section is centred */
-  var guide = document.querySelector('.guide');
-  if(guide){
-    new IntersectionObserver(function(e){
-      guide.classList.toggle('active', e[0].isIntersecting);
-    }, { rootMargin: '-45% 0px -45% 0px' }).observe(guide);
-  }
-
   /* hero */
   var hero = document.querySelector('.vh');
   if(!hero) return;
   var reveal = hero.querySelector('.vh-reveal');
   var copy = hero.querySelector('.vh-copy');
   var media = hero.querySelector('.vh-media');
-  var cue = hero.querySelector('.vh-cue');
   var pause = hero.querySelector('.vh-pause');
 
   pause.hidden = reduced;
@@ -205,32 +196,4 @@
     target = Math.min(window.scrollY, hero.offsetHeight);
     if(!running){ running = true; requestAnimationFrame(renderParallax); }
   }, { passive: true });
-
-  /* cursor-following scroll button on devices with a precise pointer */
-  if(window.matchMedia('(pointer: fine)').matches){
-    cue.classList.add('fine');
-    var cx = 0, cy = 0, gx = 0, gy = 0, following = false;
-    function followCue(){
-      cx += (gx - cx) * 0.18;
-      cy += (gy - cy) * 0.18;
-      cue.style.setProperty('--x', cx.toFixed(1) + 'px');
-      cue.style.setProperty('--y', cy.toFixed(1) + 'px');
-      if(following) requestAnimationFrame(followCue);
-    }
-    hero.addEventListener('mousemove', function(e){
-      var r = hero.getBoundingClientRect();
-      gx = e.clientX - r.left - 46;
-      gy = e.clientY - r.top - 46;
-      if(!following){
-        following = true;
-        cx = gx; cy = gy;
-        cue.style.setProperty('--s', 1);
-        requestAnimationFrame(followCue);
-      }
-    });
-    hero.addEventListener('mouseleave', function(){
-      following = false;
-      cue.style.setProperty('--s', 0);
-    });
-  }
 })();
