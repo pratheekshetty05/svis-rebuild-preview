@@ -160,6 +160,9 @@
   .js .ring svg{clip-path:inset(-20% 100% -20% -20%);transition:clip-path 1.4s .9s ease}
   .js .vh.ready .ring svg{clip-path:inset(-20%)}
   .vh-sub{position:absolute;left:var(--gutter);bottom:30px;max-width:46ch;font-size:clamp(1rem,1.3vw,1.15rem);line-height:1.45}
+  .vh-sub .boards{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;text-shadow:none}
+  .vh-sub .boards>span{display:inline-flex;align-items:baseline;gap:7px;border:1px solid rgba(255,255,255,.7);background:rgba(99,100,102,.55);border-radius:999px;padding:7px 14px;font-size:.88rem;line-height:1.2;white-space:nowrap}
+  .vh-sub .boards b{font-weight:700;letter-spacing:.04em}
   .vh .sticker{position:absolute;right:var(--gutter);top:clamp(110px,17vh,170px);z-index:3}
   .vh-pause{position:absolute;right:var(--gutter);bottom:28px;z-index:3;display:flex;align-items:center;gap:8px;background:rgba(99,100,102,.75);color:#fff;border:1px solid rgba(255,255,255,.6);border-radius:999px;padding:9px 16px;font:600 .85rem/1 var(--body);cursor:pointer;transition:background .25s}
   .vh-pause:hover{background:var(--brand)}
@@ -231,6 +234,10 @@
   .skills{background:var(--brand);color:#fff;padding-bottom:0;overflow:hidden}
   .sk-head{position:relative;padding-bottom:clamp(40px,6vw,90px)}
   .sk-head .display{position:relative;z-index:2;margin-top:22px;max-width:12ch;text-shadow:0 2px 24px rgba(99,100,102,.85)}
+  .sk-boards{position:relative;z-index:2;display:flex;flex-wrap:wrap;gap:12px;margin:26px 0 0;padding:0;list-style:none}
+  .sk-boards li{display:flex;flex-direction:column;gap:2px;border:1px solid rgba(255,255,255,.55);border-radius:18px;padding:12px 20px;min-width:150px}
+  .sk-boards b{font-size:clamp(1.3rem,2vw,1.7rem);font-weight:700;letter-spacing:.02em;color:#fff}
+  .sk-boards span{font-size:.95rem;color:var(--on-navy-muted)}
   .sk-photo{position:absolute;right:0;bottom:0;width:min(50vw,720px);aspect-ratio:2/1.05;border-radius:999px 999px 0 0;overflow:hidden}
   .sk-photo img{width:100%;height:100%;object-fit:cover}
   .sk-row{border-top:1px solid rgba(255,255,255,.35)}
