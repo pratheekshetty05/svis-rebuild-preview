@@ -30,7 +30,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/svis.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@700&amp;text=%E0%A4%B8%E0%A4%BE%E0%A4%A6%E0%A4%97%E0%A5%80%E0%A4%B8%E0%A5%87%E0%A4%B5%E0%A4%BE%E0%A4%AA%E0%A4%B5%E0%A4%BF%E0%A4%A4%E0%A5%8D%E0%A4%B0%E0%A4%A4%E0%A4%BE%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%BE%E0%A4%B0%E0%A5%8D%E0%A4%A5%E0%A4%A8%E0%A4%BE&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/home.css">
 <script>document.documentElement.classList.add('js')</script>
 <script type="application/ld+json">
 {
@@ -105,331 +106,243 @@
 </script>
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip" href="#main">Skip to content</a>
 <svg class="sprite" aria-hidden="true">
-  <defs>
-    <path id="ringp" d="M50 50m-33 0a33 33 0 1 1 66 0a33 33 0 1 1-66 0"/>
-    <clipPath id="blade" clipPathUnits="objectBoundingBox"><path d="M.2 0H1V1H.03C.2.8.3.54.25.3.23.18.21.08.2 0Z"/></clipPath>
-    <clipPath id="tri" clipPathUnits="objectBoundingBox"><path d="M.44.05Q.5-.03.56.05L.98.89Q1.03 1 .92 1H.08Q-.03 1 .02.89Z"/></clipPath>
-  </defs>
-  <symbol id="scallop" viewBox="0 0 100 100"><path d="M50.0 6.0A10.6 10.6 0 0 1 69.1 10.4A10.6 10.6 0 0 1 84.4 22.6A10.6 10.6 0 0 1 92.9 40.2A10.6 10.6 0 0 1 92.9 59.8A10.6 10.6 0 0 1 84.4 77.4A10.6 10.6 0 0 1 69.1 89.6A10.6 10.6 0 0 1 50.0 94.0A10.6 10.6 0 0 1 30.9 89.6A10.6 10.6 0 0 1 15.6 77.4A10.6 10.6 0 0 1 7.1 59.8A10.6 10.6 0 0 1 7.1 40.2A10.6 10.6 0 0 1 15.6 22.6A10.6 10.6 0 0 1 30.9 10.4A10.6 10.6 0 0 1 50.0 6.0Z"/></symbol>
-  <symbol id="squiggle" viewBox="0 0 120 24" preserveAspectRatio="xMinYMid meet"><path d="M2 14c10-14 18 12 30 2s16-14 28-2 18 12 30 0 14-12 28-4" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></symbol>
-  <symbol id="star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 1l2.6 8.4L23 12l-8.4 2.6L12 23l-2.6-8.4L1 12l8.4-2.6z"/></symbol>
-  <symbol id="arrow-ne" viewBox="0 0 16 16"><path d="M3 13 13 3M5 3h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-  <symbol id="arrow-r" viewBox="0 0 16 16"><path d="M2 8h12M9 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-  <symbol id="arrow-l" viewBox="0 0 16 16"><path d="M14 8H2M7 3 2 8l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 16 16"><path d="M2 8h12M9 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-left" viewBox="0 0 16 16"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-right" viewBox="0 0 16 16"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16v4ZM13.5 6.5l4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5a7 7 0 0 0-14 0C5 14.8 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="9.5" r="2.5" fill="currentColor"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 11v6M12 7.5v.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 10h17M8 3v4M16 3v4" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="i-build" viewBox="0 0 24 24"><path d="M4 21V8l8-5 8 5v13M9 21v-6h6v6M2 21h20" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+  <symbol id="i-q" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1 .9-1 1.6v.6M12 17v.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
   <symbol id="i-fb" viewBox="0 0 24 24"><path fill="currentColor" d="M14 8h3V4h-3a5 5 0 0 0-5 5v2H7v4h2v7h4v-7h3l1-4h-4V9a1 1 0 0 1 1-1z"/></symbol>
   <symbol id="i-ig" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></g><circle cx="17.3" cy="6.7" r="1.3" fill="currentColor"/></symbol>
   <symbol id="i-li" viewBox="0 0 24 24"><path fill="currentColor" d="M4 9h4v12H4zM6 3a2.2 2.2 0 1 1 0 4.4A2.2 2.2 0 0 1 6 3zm5 6h3.8v1.7c.6-1 1.9-2 3.8-2 4 0 4.4 2.6 4.4 6V21h-4v-5.3c0-1.3 0-3-1.8-3s-2.2 1.4-2.2 2.9V21h-4z"/></symbol>
-  <symbol id="i-yt" viewBox="0 0 24 24"><path fill="currentColor" d="M22 7.5a3 3 0 0 0-2-2C18 5 12 5 12 5s-6 0-8 .5a3 3 0 0 0-2 2A30 30 0 0 0 1.500 12 30 30 0 0 0 2 16.500a3 3 0 0 0 2 2c2 .5 8 .5 8 .5s6 0 8-.5a3 3 0 0 0 2-2 30 30 0 0 0 .5-4.500A30 30 0 0 0 22 7.500zM10 15V9l5 3z"/></symbol>
-  <symbol id="i-x" viewBox="0 0 24 24"><path fill="currentColor" d="M18 3h3l-7 8 8 10h-6l-5-6-5 6H3l7.500-9L3 3h6l4.500 5.500z"/></symbol>
+  <symbol id="i-yt" viewBox="0 0 24 24"><path fill="currentColor" d="M22 7.5a3 3 0 0 0-2-2C18 5 12 5 12 5s-6 0-8 .5a3 3 0 0 0-2 2A30 30 0 0 0 1.5 12 30 30 0 0 0 2 16.5a3 3 0 0 0 2 2c2 .5 8 .5 8 .5s6 0 8-.5a3 3 0 0 0 2-2 30 30 0 0 0 .5-4.5 30 30 0 0 0-.5-4.5zM10 15.5v-7l6 3.5z"/></symbol>
 </svg>
 
-<header class="site on-dark" id="siteHeader">
-  <a class="logo" href="index.html" aria-label="Sadhu Vaswani International School, Bangalore home">
-    <picture class="lg-c"><source media="(max-width:560px)" srcset="logo/logo-mark-color.png" width="1200" height="818"><img src="logo/logo-full-color.png" width="2000" height="413" alt="Sadhu Vaswani International School"></picture>
-    <picture class="lg-w"><source media="(max-width:560px)" srcset="logo/logo-mark-white.png" width="1200" height="818"><img src="logo/logo-full-white.png" width="2000" height="413" alt=""></picture>
+<header class="hd" id="hd">
+  <a class="hd-logo" href="index.html" aria-label="Sadhu Vaswani International School, Bangalore home">
+    <span class="badge"><img src="logo/logo-mark-color.png" width="1200" height="818" alt=""></span>
+    <img class="word" src="logo/logo-full-white.png" width="2000" height="413" alt="">
   </a>
-  <div class="bar">
-    <button class="b-menu" id="menuBtn" type="button" aria-expanded="false" aria-controls="siteMenu"><span>Menu</span><i></i></button>
-    <a class="b-guide" href="#guide">Explore SVIS</a>
-    <a class="b-q" href="admissions.html">Enquire</a>
-    <a class="b-q" href="#tour">Visit</a>
-    <a class="b-apply" href="https://svisbangalore.com/svis-admission-form/">Apply <svg aria-hidden="true"><use href="#arrow-ne"/></svg></a>
-    <div class="menu" id="siteMenu">
-      <nav aria-label="Primary">
-        <ul>
-          <li><a href="about.html"><b>About SVIS</b><span>Our story, values and leadership</span></a></li>
-          <li><a href="#academics"><b>Academics</b><span>CBSE for Grades 1–11, IGCSE from Grade 8</span></a></li>
-          <li><a href="#campus"><b>Campus</b><span>An IGBC Platinum green campus in Yelahanka</span></a></li>
-          <li><a href="facilities.html"><b>Facilities</b><span>Labs, library, sports, transport and daily care</span></a></li>
-          <li><a href="admissions.html"><b>Admissions</b><span>Process, age criteria and documents for 2026–27</span></a></li>
-          <li><a href="faq.html"><b>FAQ</b><span>Answers for parents</span></a></li>
-        </ul>
-      </nav>
-      <div class="m-side">
-        <img src="logo/logo-mark-white.png" width="1200" height="818" alt="" loading="lazy">
-        <p>No 348/1 &amp; 348/2, Bettahalsur Village, Jala Hobli, Yelahanka, Bangalore – 562157</p>
-        <p><a href="tel:+919945448830">+91 99454 48830</a><br><a href="mailto:enquiries@svisbangalore.com">enquiries@svisbangalore.com</a></p>
-        <svg aria-hidden="true"><use href="#squiggle"/></svg>
-      </div>
+  <nav class="util" aria-label="Quick links">
+    <a href="admissions.html"><svg aria-hidden="true"><use href="#i-cal"/></svg>admissions 2026–27</a>
+    <a href="facilities.html"><svg aria-hidden="true"><use href="#i-build"/></svg>facilities</a>
+    <a href="faq.html"><svg aria-hidden="true"><use href="#i-q"/></svg>faq</a>
+    <a href="tel:+919945448830"><svg aria-hidden="true"><use href="#i-phone"/></svg>+91 99454 48830</a>
+  </nav>
+  <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><i></i></button>
+</header>
+
+<div class="menu" id="menu" inert>
+  <div class="m-photo">
+    <img src="images/hero-assembly-hall.jpg" width="1920" height="1440" alt="" loading="lazy">
+    <div class="m-cta">
+      <p class="m-h">your child belongs here</p>
+      <p>Join a values-driven school where curiosity, character and kindness grow together. Admissions are open for 2026–27.</p>
+      <a href="admissions.html">Explore admissions <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
     </div>
   </div>
-</header>
-<div class="scrim" aria-hidden="true"></div>
+  <div class="m-panel">
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="about.html">about svis</a></li>
+        <li><a href="#academics">academics</a></li>
+        <li><a href="facilities.html">campus &amp; facilities</a></li>
+        <li><a href="admissions.html">admissions</a></li>
+        <li><a href="faq.html">faq</a></li>
+      </ul>
+    </nav>
+    <div class="m-contact">
+      <p>No 348/1 &amp; 348/2, Bettahalsur Village, Jala Hobli, Yelahanka, Bangalore – 562157</p>
+      <p><a href="tel:+919945448830">+91 99454 48830</a><br><a href="mailto:enquiries@svisbangalore.com">enquiries@svisbangalore.com</a></p>
+    </div>
+  </div>
+</div>
+
+<nav class="quick" aria-label="Get started">
+  <a class="q-apply" href="https://svisbangalore.com/svis-admission-form/"><svg aria-hidden="true"><use href="#i-pen"/></svg><span>apply</span></a>
+  <a class="q-visit" href="mailto:enquiries@svisbangalore.com?subject=Campus%20tour"><svg aria-hidden="true"><use href="#i-pin"/></svg><span>visit</span></a>
+  <a class="q-enq" href="mailto:enquiries@svisbangalore.com"><svg aria-hidden="true"><use href="#i-info"/></svg><span>enquire</span></a>
+</nav>
+
 <main id="main">
 
-<!-- HERO -->
-<section class="vh" id="top">
-  <div class="vh-reveal">
-    <div class="vh-media"><picture><source media="(orientation: portrait)" srcset="images/hero-mind-heart-soul-tall.jpg" width="1200" height="2400"><img src="images/hero-mind-heart-soul.jpg" width="2400" height="1357" alt="Six students in grey SVIS uniforms on the lawn in front of the SVIS Bangalore building with its rainbow-striped facade: one reads, two plant a sapling, and three stand with palms joined in prayer." fetchpriority="high"></picture></div>
-    <div class="vh-veil"></div>
-    <div class="vh-copy">
-      <h1 class="vh-title"><span class="ey">Sadhu Vaswani International School, Bangalore</span>
-        <span class="ln">Awakening</span>
-        <span class="ln"><span>the Mind,</span> <span class="ring">Heart<svg viewBox="0 0 240 90" preserveAspectRatio="none" aria-hidden="true"><path d="M34 20C76 2 186 2 222 26c24 18-10 46-74 54-58 7-124 2-140-26C-4 30 40 10 92 6c52-3 104 2 136 22"/></svg></span></span>
-        <span class="ln">and Soul.</span></h1>
-      <p class="vh-sub"><span class="boards"><span><b>CBSE</b> Grades 1–11</span><span><b>IGCSE</b> Grade 8 onwards</span></span>A school in Yelahanka, North Bangalore, where every child grows confident and curious.</p>
-    </div>
-  </div>
-  <a class="sticker" href="admissions.html" aria-label="Admissions open 2026–27. Go to admissions.">
-    <svg viewBox="0 0 100 100" aria-hidden="true"><use class="sc" href="#scallop"/><g class="spin"><text><textPath href="#ringp">ADMISSIONS OPEN 2026–27 ✦ APPLY NOW ✦</textPath></text></g><path class="glyph" d="M41 59 59 41M45 41h14v14"/></svg>
-  </a>
-  <button class="vh-pause" type="button" aria-pressed="false"><i></i><span>Pause motion</span></button>
+<section class="hero" id="top">
+  <div class="h-media"><picture><source media="(orientation: portrait)" srcset="images/hero-mind-heart-soul-tall.jpg" width="1200" height="2400"><img src="images/hero-mind-heart-soul.jpg" width="2400" height="1357" alt="Six students in grey SVIS uniforms on the lawn in front of the SVIS Bangalore building with its rainbow-striped facade: one reads, two plant a sapling, and three stand with palms joined in prayer." fetchpriority="high"></picture></div>
+  <div class="h-veil"></div>
+  <h1 class="h-tag"><span class="sr">Sadhu Vaswani International School, Bangalore: </span>awakening the mind, <b>heart</b> and soul</h1>
+  <button class="h-pause" id="pause" type="button" aria-pressed="false" aria-label="Pause background motion"><i></i></button>
 </section>
 
-<!-- STORY -->
-<section class="story" id="story" data-slider="7000">
+<section class="intro" id="academics">
+  <span class="dot" style="--c:var(--maroon);--s:34px;left:5%;top:44%" data-speed=".18" aria-hidden="true"></span>
+  <span class="dot" style="--c:var(--blue);--s:30px;right:6%;top:14%" data-speed="-.12" aria-hidden="true"></span>
+  <span class="dot" style="--c:var(--lime);--s:16px;right:12%;top:30%" data-speed=".25" aria-hidden="true"></span>
   <div class="wrap">
-    <h2 class="label">The SVIS Story <svg aria-hidden="true"><use href="#squiggle"/></svg></h2>
-    <div data-track>
-      <div data-slide>
-        <p class="d3 story-txt long" data-words>At SVIS, we inspire curiosity, creativity, and innovation. Guided by truth, respect, and excellence, we empower every child to make a meaningful impact with integrity and purpose.</p>
-        <figure><img src="images/hero-assembly-hall.jpg" width="1920" height="1440" alt="The atrium at SVIS Bangalore, beneath the words 'Kindling The Love For Learning.'" loading="lazy"></figure>
-      </div>
-      <div data-slide>
-        <p class="d3 story-txt" data-words>“The root of education is reverence. The fruit of education is service.”</p>
-        <figure><img src="images/sanctuary-prayer.jpg" width="1920" height="1440" alt="SVIS students gathered in prayer during Morning Assembly." loading="lazy"></figure>
-      </div>
-      <div data-slide>
-        <p class="d3 story-txt long" data-words>SVIS opened in June 2021 at Bettahalasur, Yelahanka, continuing the Mira Movement in Education begun by Sadhu T.L. Vaswani in 1933.</p>
-        <figure><img src="images/library-reading.jpg" width="1920" height="1440" alt="Two SVIS Middle School students reading together at a library table." loading="lazy"></figure>
-      </div>
-    </div>
-    <div class="story-foot">
-      <div class="sl-nav">
-        <button class="sl-arrow" type="button" data-prev aria-label="Previous"><svg aria-hidden="true"><use href="#arrow-l"/></svg></button>
-        <div data-dots></div>
-        <button class="sl-arrow" type="button" data-next aria-label="Next"><svg aria-hidden="true"><use href="#arrow-r"/></svg></button>
-      </div>
-      <a class="btn btn-ghost" href="about.html">Read our Vision &amp; Mission</a>
+    <h2 class="tt" data-rv><span>where curiosity leads</span><b>&amp; character grows</b></h2>
+    <p class="lead" data-rv>SVIS offers CBSE for Grades 1–11 and IGCSE from Grade 8 onwards, with personal attention that sparks critical thinking, curiosity and a love of learning.</p>
+    <div class="stages">
+      <a class="stage" href="https://svisbangalore.com/montessori-early-years/" data-rv><img src="images/pre-primary-2.jpg" width="1920" height="1440" alt="A teacher guiding two Pre-Primary children through a worksheet at SVIS." loading="lazy"><b>early years</b></a>
+      <a class="stage" href="https://svisbangalore.com/primary/" data-rv><img src="images/primary-classroom.jpg" width="1920" height="1440" alt="Students writing in their notebooks during a classroom lesson at SVIS." loading="lazy"><b>primary school</b></a>
+      <a class="stage" href="https://svisbangalore.com/middle-school/" data-rv><img src="images/classroom-focus.jpg" width="1920" height="1440" alt="An SVIS student writing in her notebook during a lesson." loading="lazy"><b>middle school</b></a>
+      <a class="stage" href="https://svisbangalore.com/secondary-school/" data-rv><img src="images/secondary-classroom.jpg" width="1920" height="1440" alt="Older SVIS students writing at their desks in a classroom." loading="lazy"><b>secondary school</b></a>
     </div>
   </div>
 </section>
 
-<!-- CAMPUS -->
-<section class="community" id="campus">
+<section class="values" id="values">
+  <span class="dot" style="--c:var(--gold);--s:22px;left:14%;top:7%" data-speed=".2" aria-hidden="true"></span>
+  <span class="dot" style="--c:var(--maroon);--s:34px;left:9%;top:11%" data-speed=".1" aria-hidden="true"></span>
+  <span class="dot" style="--c:var(--blue);--s:28px;left:6%;top:26%" data-speed="-.15" aria-hidden="true"></span>
+  <span class="dot" style="--c:var(--lime);--s:44px;right:7%;top:38%" data-speed=".22" aria-hidden="true"></span>
+  <span class="dot" style="--c:var(--grey);--s:24px;left:44%;top:60%" data-speed="-.2" aria-hidden="true"></span>
   <div class="wrap">
-    <h2 class="label">Our Campus <svg aria-hidden="true"><use href="#squiggle"/></svg></h2>
-    <p class="display" data-words>A vibrant campus, built for every student.</p>
-    <div class="shapes">
-      <figure class="shape s-circle" data-reveal>
-        <div class="shape-img"><img src="images/sanctuary-assembly-2.jpg" width="1920" height="1440" alt="SVIS students gathered for Morning Assembly beneath the atrium's oval skylight." loading="lazy"></div>
-        <figcaption><b>Morning Assembly</b><span>Every day begins together</span></figcaption>
-      </figure>
-      <figure class="shape s-rect" data-reveal>
-        <div class="shape-img"><img src="images/library-shelving.jpg" width="1440" height="1920" alt="An SVIS student browsing the biography shelf in the library." loading="lazy"></div>
-        <figcaption><b>Reading Corner</b><span>A book for every interest</span></figcaption>
-      </figure>
-      <figure class="shape s-tri" data-reveal>
-        <div class="shape-img"><img src="images/climbing-wall.jpg" width="1920" height="1280" alt="Three SVIS students at the climbing wall." loading="lazy"></div>
-        <figcaption><b>Adventure Wall</b><span>Climbing and play</span></figcaption>
-      </figure>
-    </div>
-    <a class="btn btn-line" href="facilities.html">Explore all facilities</a>
+    <h2 class="tt c" data-rv><span>where values</span><b>unite us</b></h2>
+    <p class="lead c" data-rv><strong>Rooted in the teachings of Sadhu T.L. Vaswani,</strong> SVIS welcomes children from diverse backgrounds. Our motto, Simplicity and Service; Purity and Prayer, shapes how we learn, lead and care for one another.</p>
+  </div>
+  <div class="v-list">
+    <article class="v-row">
+      <div class="v-txt"><h3><span>simplicity</span><b>saadgi <span lang="hi">सादगी</span></b></h3><p>We value what matters most and live without excess.</p></div>
+      <figure><img src="images/library-reading.jpg" width="1920" height="1440" alt="Two SVIS students reading together at a library table." loading="lazy"></figure>
+    </article>
+    <article class="v-row">
+      <div class="v-txt"><h3><span>service</span><b>seva <span lang="hi">सेवा</span></b></h3><p>We help others gladly, because the fruit of education is service.</p></div>
+      <figure><img src="images/teacher-support.jpg" width="1920" height="1280" alt="A teacher giving two SVIS students individual attention at their desk." loading="lazy"></figure>
+    </article>
+    <article class="v-row">
+      <div class="v-txt"><h3><span>purity</span><b>pavitrata <span lang="hi">पवित्रता</span></b></h3><p>We keep our thoughts, words and actions honest and kind.</p></div>
+      <figure><img src="images/sanctuary-assembly-2.jpg" width="1920" height="1440" alt="SVIS students gathered for Morning Assembly beneath the atrium's oval skylight." loading="lazy"></figure>
+    </article>
+    <article class="v-row">
+      <div class="v-txt"><h3><span>prayer</span><b>prarthana <span lang="hi">प्रार्थना</span></b></h3><p>Each day begins in stillness, with prayer at Morning Assembly.</p></div>
+      <figure><img src="images/sanctuary-prayer.jpg" width="1920" height="1440" alt="SVIS students gathered in prayer during Morning Assembly." loading="lazy"></figure>
+    </article>
   </div>
 </section>
 
-<!-- ACADEMICS -->
-<section class="skills" id="academics">
-  <div class="wrap sk-head">
-    <h2 class="label">Academics <svg aria-hidden="true"><use href="#squiggle"/></svg></h2>
-    <p class="display" data-words>One journey, four stages.</p>
-    <ul class="sk-boards" aria-label="Curricula">
-      <li><b>CBSE</b><span>Grades 1–11</span></li>
-      <li><b>IGCSE</b><span>Grade 8 onwards</span></li>
-    </ul>
-    <p class="sk-hint">Select a stage to see what your child learns. <svg aria-hidden="true"><use href="#arrow-r"/></svg></p>
-    <div class="sk-photo"><img src="images/teacher-support.jpg" width="1920" height="1280" alt="A teacher giving two SVIS students individual attention at their desk." loading="lazy"></div>
+<section class="learn" id="learning" aria-labelledby="learn-h">
+  <div class="l-head">
+    <span class="dot" style="--c:var(--lime);--s:16px;left:-30px;top:-14px" aria-hidden="true"></span>
+    <span class="dot" style="--c:var(--grey);--s:20px;left:-52px;top:28px" aria-hidden="true"></span>
+    <span class="dot" style="--c:var(--blue);--s:16px;left:-30px;top:96px" aria-hidden="true"></span>
+    <h2 class="tt" id="learn-h"><span>where we learn</span><b>by doing</b></h2>
+    <div class="arrows">
+      <button type="button" data-l="-1" aria-label="Previous"><svg aria-hidden="true"><use href="#i-left"/></svg></button>
+      <button type="button" data-l="1" aria-label="Next"><svg aria-hidden="true"><use href="#i-right"/></svg></button>
+    </div>
   </div>
-  <div class="sk-rows">
-    <div class="sk-row open">
-      <h3><button class="sk-btn" type="button" aria-expanded="true" aria-controls="sk-1" aria-label="Early Years"><span class="sk-track" aria-hidden="true"><span class="sk-set"><img src="images/pre-primary-2.jpg" width="1920" height="1440" alt="" loading="lazy"><b>Early Years<sup>1</sup></b><i></i><img src="images/pre-primary-teacher.jpg" width="1920" height="1440" alt="" loading="lazy"><b>Early Years<sup>1</sup></b><i></i></span></span><span class="sk-open" aria-hidden="true"><span class="o"><span class="d">See details</span><span class="m">Open</span></span><span class="c">Close</span><i></i></span></button></h3>
-      <div class="sk-panel" id="sk-1"><div><div class="wrap sk-body">
-        <h4>Montessori &amp; Early Years</h4>
-        <p>Each day begins with songs, stories, art, and theme-based activities that make learning joyful and meaningful. Children explore through hands-on experiences that build curiosity and imagination while nurturing social and emotional growth.</p>
-        <a class="btn btn-primary" href="https://svisbangalore.com/montessori-early-years/">Know more</a>
-      </div></div></div>
-    </div>
-    <div class="sk-row">
-      <h3><button class="sk-btn" type="button" aria-expanded="false" aria-controls="sk-2" aria-label="Primary"><span class="sk-track" aria-hidden="true"><span class="sk-set"><img src="images/primary-classroom.jpg" width="1920" height="1440" alt="" loading="lazy"><b>Primary<sup>2</sup></b><i></i><img src="images/classroom-focus.jpg" width="1920" height="1440" alt="" loading="lazy"><b>Primary<sup>2</sup></b><i></i></span></span><span class="sk-open" aria-hidden="true"><span class="o"><span class="d">See details</span><span class="m">Open</span></span><span class="c">Close</span><i></i></span></button></h3>
-      <div class="sk-panel" id="sk-2"><div><div class="wrap sk-body">
-        <h4>Primary School</h4>
-        <p>Our syllabus is aligned with the CBSE curriculum. Trained, experienced, and committed faculty work to ensure an engaging, interactive, and vibrant learning environment. A usual day includes academic sessions, music, dance, sport, and other extracurricular activities to keep students eager to come back for more every day.</p>
-        <a class="btn btn-primary" href="https://svisbangalore.com/primary/">Know more</a>
-      </div></div></div>
-    </div>
-    <div class="sk-row">
-      <h3><button class="sk-btn" type="button" aria-expanded="false" aria-controls="sk-3" aria-label="Middle"><span class="sk-track" aria-hidden="true"><span class="sk-set"><img src="images/robotics-lab.jpg" width="1920" height="1440" alt="" loading="lazy"><b>Middle<sup>3</sup></b><i></i><img src="images/science-lab.jpg" width="1440" height="1920" alt="" loading="lazy"><b>Middle<sup>3</sup></b><i></i></span></span><span class="sk-open" aria-hidden="true"><span class="o"><span class="d">See details</span><span class="m">Open</span></span><span class="c">Close</span><i></i></span></button></h3>
-      <div class="sk-panel" id="sk-3"><div><div class="wrap sk-body">
-        <h4>Middle School</h4>
-        <p>The curriculum builds strong conceptual foundations while encouraging practical application. Students explore English, Mathematics, Science, Social Science, and Computer Applications, along with Art, Music, and Physical Education. A balanced blend of academics, projects, and digital learning nurtures curiosity, creativity, and independent thinking. From Grade 8, families can choose the IGCSE pathway alongside CBSE.</p>
-        <a class="btn btn-primary" href="https://svisbangalore.com/middle-school/">Know more</a>
-      </div></div></div>
-    </div>
-    <div class="sk-row">
-      <h3><button class="sk-btn" type="button" aria-expanded="false" aria-controls="sk-4" aria-label="Secondary"><span class="sk-track" aria-hidden="true"><span class="sk-set"><img src="images/secondary-classroom.jpg" width="1920" height="1440" alt="" loading="lazy"><b>Secondary<sup>4</sup></b><i></i><img src="images/science-lab-2.jpg" width="1440" height="1920" alt="" loading="lazy"><b>Secondary<sup>4</sup></b><i></i></span></span><span class="sk-open" aria-hidden="true"><span class="o"><span class="d">See details</span><span class="m">Open</span></span><span class="c">Close</span><i></i></span></button></h3>
-      <div class="sk-panel" id="sk-4"><div><div class="wrap sk-body">
-        <h4>Secondary School</h4>
-        <p>The program prepares students for the CBSE Board Examinations, or for IGCSE examinations on the IGCSE pathway, through a focused yet holistic approach. Emphasis is placed on academic excellence, analytical thinking, and value-based learning. Through career awareness, collaboration, and community engagement, students grow into confident, responsible, and future-ready individuals.</p>
-        <a class="btn btn-primary" href="https://svisbangalore.com/secondary-school/">Know more</a>
-      </div></div></div>
-    </div>
+  <div class="l-track" id="ltrack" tabindex="0" aria-label="Learning at SVIS, scrollable">
+    <figure class="l-slide"><img src="images/robotics-lab.jpg" width="1920" height="1440" alt="Two SVIS Middle School students building a motorised model in the Robotics Lab." loading="lazy"><figcaption><p>Robotics and coding labs where students design, build and test their own ideas.</p><a class="lnk" href="facilities.html">Discover our facilities <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></figcaption></figure>
+    <figure class="l-slide"><img src="images/science-lab.jpg" width="1440" height="1920" alt="SVIS students examining a blue solution in a round-bottom flask during a science lab experiment." loading="lazy"><figcaption><p>Physics, Chemistry and Biology labs where every student runs experiments hands-on.</p><a class="lnk" href="facilities.html">Discover our facilities <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></figcaption></figure>
+    <figure class="l-slide"><img src="images/math-lab.jpg" width="1500" height="1125" alt="SVIS students working with colourful geometric solids around a table in the Math Lab." loading="lazy"><figcaption><p>A Mathematics lab that turns abstract ideas into shapes students can hold.</p><a class="lnk" href="facilities.html">Discover our facilities <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></figcaption></figure>
+    <figure class="l-slide"><img src="images/composite-lab.jpg" width="1500" height="671" alt="SVIS students gathered with their teacher around a bench in the Composite Lab." loading="lazy"><figcaption><p>Project work in small groups, with a teacher close at hand to guide each step.</p><a class="lnk" href="facilities.html">Discover our facilities <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></figcaption></figure>
+    <figure class="l-slide"><img src="images/computer-lab.jpg" width="1500" height="1000" alt="Rows of desktop computers in an SVIS computer lab." loading="lazy"><figcaption><p>Separate junior and senior ICT labs, so every student builds real digital skills.</p><a class="lnk" href="facilities.html">Discover our facilities <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></figcaption></figure>
   </div>
 </section>
 
-<!-- VOICES -->
-<section class="voices" id="life" data-slider="9000">
-  <img src="images/sanctuary-assembly-2.jpg" width="1920" height="1440" alt="" loading="lazy">
+<section class="poss" id="campus">
+  <div class="p-stage">
+    <figure class="cir" style="--d:21%;left:5%;top:0" data-speed="-.08"><img src="images/sports-court.jpg" width="1440" height="1920" alt="SVIS students practising basketball dribbling drills on the sports court." loading="lazy"></figure>
+    <figure class="cir" style="--d:17%;left:1%;top:40%" data-speed=".1"><img src="images/climbing-wall.jpg" width="1920" height="1280" alt="Three SVIS students at the climbing wall." loading="lazy"></figure>
+    <figure class="cir" style="--d:20%;left:20%;top:67%" data-speed="-.14"><img src="images/performing-arts.jpg" width="1500" height="1217" alt="Young SVIS students in colourful costumes at a school performance." loading="lazy"></figure>
+    <figure class="cir" style="--d:13%;left:47%;top:1%" data-speed=".12"><img src="images/skating-rink.jpg" width="1024" height="768" alt="The outdoor skating rink on the SVIS campus." loading="lazy"></figure>
+    <figure class="cir" style="--d:18%;right:4%;top:3%" data-speed="-.1"><img src="images/play-area.jpg" width="1500" height="675" alt="Young children on the slides and climbing frames in the SVIS pre-primary play area." loading="lazy"></figure>
+    <figure class="cir" style="--d:21%;right:5%;top:39%" data-speed=".14"><img src="images/science-lab-2.jpg" width="1440" height="1920" alt="SVIS students at work on a science lab experiment." loading="lazy"></figure>
+    <figure class="cir" style="--d:15%;left:51%;top:73%" data-speed="-.06"><img src="images/pre-primary-teacher.jpg" width="1920" height="1440" alt="An SVIS teacher sharing a warm high-five with two young Pre-Primary children." loading="lazy"></figure>
+    <span class="dot" style="--c:var(--maroon);--s:12px;left:64%;top:16%" data-speed=".3" aria-hidden="true"></span>
+    <span class="dot" style="--c:var(--blue);--s:24px;left:61%;top:58%" data-speed="-.2" aria-hidden="true"></span>
+    <span class="dot" style="--c:var(--lime);--s:26px;left:9%;top:88%" data-speed=".2" aria-hidden="true"></span>
+    <span class="dot" style="--c:var(--gold);--s:58px;right:10%;top:90%" data-speed="-.15" aria-hidden="true"></span>
+    <div class="p-txt"><div data-rv>
+      <h2 class="tt c"><span>where possibilities</span><b>are endless</b></h2>
+      <p>From skating and climbing to music, theatre and sport, every child at SVIS finds a way to shine on our five-acre IGBC Platinum green campus.</p>
+      <a class="lnk" href="facilities.html">Explore the campus <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </div></div>
+  </div>
+</section>
+
+<section class="voices" id="voices">
+  <span class="dot" style="--c:var(--lime);--s:14px;left:42%;top:22%" data-speed=".2" aria-hidden="true"></span>
+  <span class="dot" style="--c:var(--maroon);--s:34px;right:9%;top:24%" data-speed="-.15" aria-hidden="true"></span>
   <div class="wrap">
-    <h2 class="label">Parent Voices <svg aria-hidden="true"><use href="#squiggle"/></svg></h2>
-    <div>
-      <span class="v-mark" aria-hidden="true">“</span>
-      <div data-track>
-        <figure data-slide>
-          <blockquote class="d3">SVIS is not just the school but an EMOTION for us as we are associated with the school and a second HOME for our little one, looking forward to see our little one grow with the school STRONG, BRAVE AND INDEPENDENT.</blockquote>
-          <figcaption><cite>Gopi and Renuka<small>SVIS Parents</small></cite></figcaption>
-        </figure>
-        <figure data-slide>
-          <blockquote class="d3">Thank you and we feel that our daughter is in SAFE HANDS.</blockquote>
-          <figcaption><cite>Gopi and Renuka<small>SVIS Parents</small></cite></figcaption>
-        </figure>
-      </div>
-      <a class="btn btn-gold" href="admissions.html">Admissions 2026–27 <svg aria-hidden="true"><use href="#arrow-ne"/></svg></a>
-    </div>
-    <div class="v-side">
-      <div class="sl-nav">
-        <button class="sl-arrow" type="button" data-prev aria-label="Previous"><svg aria-hidden="true"><use href="#arrow-l"/></svg></button>
-        <div data-dots></div>
-        <button class="sl-arrow" type="button" data-next aria-label="Next"><svg aria-hidden="true"><use href="#arrow-r"/></svg></button>
-      </div>
-      <a class="sticker" href="#tour" aria-label="Visit the campus">
-        <svg viewBox="0 0 100 100" aria-hidden="true"><use class="sc" href="#scallop"/><g class="spin"><text><textPath href="#ringp">VISIT OUR CAMPUS ✦ COME SAY HELLO ✦</textPath></text></g><path class="glyph" d="M41 59 59 41M45 41h14v14"/></svg>
-      </a>
+    <h2 class="tt" data-rv><span>bold voices</span><b>bright futures</b></h2>
+    <p class="lead" data-rv>SVIS is a second home where families feel welcome and every child feels valued, supported and inspired to grow.</p>
+  </div>
+  <div class="vo-track" id="votrack">
+    <figure class="vo" tabindex="0"><img src="images/daycare.jpg" width="1500" height="675" alt="" loading="lazy"><figcaption><b>Gopi &amp; Renuka,</b><span>SVIS parents</span></figcaption><blockquote>“SVIS is not just the school but an emotion for us… a second home for our little one.”</blockquote></figure>
+    <figure class="vo" tabindex="0"><img src="images/hero-assembly-hall.jpg" width="1920" height="1440" alt="" loading="lazy"><figcaption><b>Sadhu T.L. Vaswani,</b><span>founder, Mira Movement</span></figcaption><blockquote>“The root of education is reverence. The fruit of education is service.”</blockquote></figure>
+    <figure class="vo" tabindex="0"><img src="images/campus-aerial.jpg" width="1500" height="1125" alt="" loading="lazy"><figcaption><b>Manju Nichani,</b><span>executive director</span></figcaption><blockquote>40+ years in education and a former Principal of K C College, Mumbai.</blockquote></figure>
+    <figure class="vo" tabindex="0"><img src="images/amphitheatre.jpg" width="1500" height="996" alt="" loading="lazy"><figcaption><b>Remya Murali,</b><span>head of school</span></figcaption><blockquote>Postgraduate in English, Education and Mathematics, with 15+ years in education.</blockquote></figure>
+    <figure class="vo" tabindex="0"><img src="images/library-shelving.jpg" width="1440" height="1920" alt="" loading="lazy"><figcaption><b>Jaimala Kannan,</b><span>academic advisor</span></figcaption><blockquote>Montessori-trained educator with a Masters in Childcare and Education.</blockquote></figure>
+  </div>
+  <div class="wrap vo-foot">
+    <a class="pill-line" href="about.html#leadership">discover life at svis</a>
+    <div class="arrows">
+      <button type="button" data-v="-1" aria-label="Previous"><svg aria-hidden="true"><use href="#i-left"/></svg></button>
+      <button type="button" data-v="1" aria-label="Next"><svg aria-hidden="true"><use href="#i-right"/></svg></button>
     </div>
   </div>
 </section>
 
-<!-- WHY SVIS -->
-<section class="why" id="why">
-  <div class="wrap">
-    <div class="why-top">
-      <div>
-        <h2 class="label">Why SVIS <svg aria-hidden="true"><use href="#squiggle"/></svg></h2>
-        <p class="d3" data-words>Four reasons families choose us.</p>
-      </div>
-      <a class="btn btn-line" href="about.html">About SVIS</a>
-    </div>
-    <div class="why-grid">
-      <a class="why-card" href="#academics" data-reveal>
-        <img src="images/primary-classroom.jpg" width="1920" height="1440" alt="Students writing in their notebooks during a classroom lesson at SVIS." loading="lazy">
-        <div><h3>CBSE &amp; IGCSE Curricula</h3><p>CBSE for Grades 1–11 and IGCSE from Grade 8 onwards, enriched with real-world learning and a global perspective.</p></div>
-      </a>
-      <a class="why-card" href="about.html#leadership" data-reveal>
-        <img src="images/pre-primary-teacher.jpg" width="1920" height="1440" alt="An SVIS teacher sharing a warm high-five with two young Pre-Primary children." loading="lazy">
-        <div><h3>Dedicated &amp; Experienced Educators</h3><p>Passionate mentors who guide and support each learner's individual journey.</p></div>
-      </a>
-      <a class="why-card" href="facilities.html" data-reveal>
-        <img src="images/science-lab.jpg" width="1440" height="1920" alt="SVIS students examining a blue solution in a round-bottom flask during a science lab experiment." loading="lazy">
-        <div><h3>World-Class Infrastructure</h3><p>Spacious classrooms, science and computer labs, and sports facilities.</p></div>
-      </a>
-      <a class="why-card" href="about.html#values" data-reveal>
-        <img src="images/sanctuary-prayer.jpg" width="1920" height="1440" alt="SVIS students gathered in prayer during Morning Assembly." loading="lazy">
-        <div><h3>Value-Centered Learning</h3><p>Empathy, respect, and responsibility, for confident, compassionate citizens.</p></div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- STATS -->
-<section class="stats" id="numbers" data-slider="5000">
-  <svg class="wave" viewBox="0 0 1440 300" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M-20 170C120 60 220 70 340 150s240 110 380 30 240-120 370-40 220 110 370 20"/></svg>
-  <div class="wrap">
-    <a class="sticker" href="facilities.html#green-school" aria-label="IGBC Platinum green campus. See our facilities.">
-      <svg viewBox="0 0 100 100" aria-hidden="true"><use class="sc" href="#scallop"/><g class="spin"><text><textPath href="#ringp">IGBC PLATINUM ✦ GREEN CAMPUS ✦</textPath></text></g><path class="glyph" d="M50 39c5 7 6 15 0 22-6-7-5-15 0-22Zm0 22v6"/></svg>
-    </a>
-    <h2 class="label" style="margin-bottom:clamp(28px,4vw,48px)">SVIS by the Numbers <svg aria-hidden="true"><use href="#squiggle"/></svg></h2>
-    <div data-track>
-      <div class="st-page" data-slide>
-        <p class="st"><b>60</b><span>Classrooms</span></p>
-        <p class="st"><b>52</b><span>Teachers</span></p>
-        <p class="st"><b>1:1.5</b><span>Teacher-to-section ratio</span></p>
-      </div>
-      <div class="st-page" data-slide>
-        <p class="st"><b>2021</b><span>Classes began at Bettahalasur</span></p>
-        <p class="st"><b>400</b><span>Mbps campus internet</span></p>
-        <p class="st"><b>17,239</b><span>Sq. m. campus area</span></p>
-      </div>
-    </div>
-    <div class="stats-foot">
-      <div class="sl-nav"><div data-dots></div></div>
-      <a href="https://svisbangalore.com/mandatory-public-disclosure/">From our Mandatory Public Disclosure</a>
-    </div>
-  </div>
-</section>
-
-<!-- GUIDE -->
-<section class="guide" id="guide">
-  <div class="wrap">
-    <h2 class="label">Explore SVIS <svg aria-hidden="true"><use href="#squiggle"/></svg></h2>
-    <p class="display" data-words>Give your child the opportunity to thrive.</p>
-    <p class="guide-sub">Admissions are open for 2026–27. Start wherever suits your family.</p>
-    <div class="g-cards">
-      <a class="g-card" href="about.html"><img src="images/sanctuary-assembly-2.jpg" width="1920" height="1440" alt="SVIS students at Morning Assembly." loading="lazy"><b>Our Story <svg aria-hidden="true"><use href="#arrow-ne"/></svg></b></a>
-      <a class="g-card" href="#academics"><img src="images/robotics-lab.jpg" width="1920" height="1440" alt="Two SVIS Middle School students building a motorised model in the Robotics Lab." loading="lazy"><b>Academics <svg aria-hidden="true"><use href="#arrow-ne"/></svg></b></a>
-      <a class="g-card" href="admissions.html"><img src="images/pre-primary-2.jpg" width="1920" height="1440" alt="A teacher guiding two Pre-Primary children through a worksheet at SVIS." loading="lazy"><b>Admissions <svg aria-hidden="true"><use href="#arrow-ne"/></svg></b></a>
-      <a class="g-card" href="faq.html"><img src="images/library-reading.jpg" width="1920" height="1440" alt="Two SVIS Middle School students reading together at a library table." loading="lazy"><b>Questions <svg aria-hidden="true"><use href="#arrow-ne"/></svg></b></a>
+<section class="belong" id="tour">
+  <img class="b-bg" src="images/campus-aerial.jpg" width="1500" height="1125" alt="" loading="lazy">
+  <div class="b-in">
+    <h2 data-rv><span>your child</span> <b>belongs</b> <span>here</span></h2>
+    <a class="lnk" href="admissions.html" data-rv>Start your journey <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    <div class="pills" data-rv>
+      <a class="pill p-blue" href="https://svisbangalore.com/svis-admission-form/">apply <svg aria-hidden="true"><use href="#i-pen"/></svg></a>
+      <a class="pill p-green" href="mailto:enquiries@svisbangalore.com?subject=Campus%20tour">visit <svg aria-hidden="true"><use href="#i-pin"/></svg></a>
+      <a class="pill p-maroon" href="mailto:enquiries@svisbangalore.com">enquire <svg aria-hidden="true"><use href="#i-info"/></svg></a>
     </div>
   </div>
 </section>
 
 </main>
 
-<section class="ribbons" id="tour" aria-label="Schedule a tour">
-  <div class="ribbon"><div class="rb-track"><span>Schedule a Tour <svg aria-hidden="true"><use href="#star"/></svg></span><span>Schedule a Tour <svg aria-hidden="true"><use href="#star"/></svg></span><span>Schedule a Tour <svg aria-hidden="true"><use href="#star"/></svg></span><span>Schedule a Tour <svg aria-hidden="true"><use href="#star"/></svg></span><span>Schedule a Tour <svg aria-hidden="true"><use href="#star"/></svg></span><span>Schedule a Tour <svg aria-hidden="true"><use href="#star"/></svg></span><span>Schedule a Tour <svg aria-hidden="true"><use href="#star"/></svg></span><span>Schedule a Tour <svg aria-hidden="true"><use href="#star"/></svg></span><span>Schedule a Tour <svg aria-hidden="true"><use href="#star"/></svg></span><span>Schedule a Tour <svg aria-hidden="true"><use href="#star"/></svg></span><span>Schedule a Tour <svg aria-hidden="true"><use href="#star"/></svg></span><span>Schedule a Tour <svg aria-hidden="true"><use href="#star"/></svg></span><span>Schedule a Tour <svg aria-hidden="true"><use href="#star"/></svg></span><span>Schedule a Tour <svg aria-hidden="true"><use href="#star"/></svg></span><span>Schedule a Tour <svg aria-hidden="true"><use href="#star"/></svg></span><span>Schedule a Tour <svg aria-hidden="true"><use href="#star"/></svg></span></div></div>
-  <div class="ribbon"><div class="rb-track"><span>Explore Campus <svg aria-hidden="true"><use href="#star"/></svg></span><span>Explore Campus <svg aria-hidden="true"><use href="#star"/></svg></span><span>Explore Campus <svg aria-hidden="true"><use href="#star"/></svg></span><span>Explore Campus <svg aria-hidden="true"><use href="#star"/></svg></span><span>Explore Campus <svg aria-hidden="true"><use href="#star"/></svg></span><span>Explore Campus <svg aria-hidden="true"><use href="#star"/></svg></span><span>Explore Campus <svg aria-hidden="true"><use href="#star"/></svg></span><span>Explore Campus <svg aria-hidden="true"><use href="#star"/></svg></span><span>Explore Campus <svg aria-hidden="true"><use href="#star"/></svg></span><span>Explore Campus <svg aria-hidden="true"><use href="#star"/></svg></span><span>Explore Campus <svg aria-hidden="true"><use href="#star"/></svg></span><span>Explore Campus <svg aria-hidden="true"><use href="#star"/></svg></span><span>Explore Campus <svg aria-hidden="true"><use href="#star"/></svg></span><span>Explore Campus <svg aria-hidden="true"><use href="#star"/></svg></span><span>Explore Campus <svg aria-hidden="true"><use href="#star"/></svg></span><span>Explore Campus <svg aria-hidden="true"><use href="#star"/></svg></span></div></div>
-  <div class="ribbon"><div class="rb-track"><span>Admissions Open 2026–27 <svg aria-hidden="true"><use href="#star"/></svg></span><span>Admissions Open 2026–27 <svg aria-hidden="true"><use href="#star"/></svg></span><span>Admissions Open 2026–27 <svg aria-hidden="true"><use href="#star"/></svg></span><span>Admissions Open 2026–27 <svg aria-hidden="true"><use href="#star"/></svg></span><span>Admissions Open 2026–27 <svg aria-hidden="true"><use href="#star"/></svg></span><span>Admissions Open 2026–27 <svg aria-hidden="true"><use href="#star"/></svg></span><span>Admissions Open 2026–27 <svg aria-hidden="true"><use href="#star"/></svg></span><span>Admissions Open 2026–27 <svg aria-hidden="true"><use href="#star"/></svg></span><span>Admissions Open 2026–27 <svg aria-hidden="true"><use href="#star"/></svg></span><span>Admissions Open 2026–27 <svg aria-hidden="true"><use href="#star"/></svg></span><span>Admissions Open 2026–27 <svg aria-hidden="true"><use href="#star"/></svg></span><span>Admissions Open 2026–27 <svg aria-hidden="true"><use href="#star"/></svg></span><span>Admissions Open 2026–27 <svg aria-hidden="true"><use href="#star"/></svg></span><span>Admissions Open 2026–27 <svg aria-hidden="true"><use href="#star"/></svg></span><span>Admissions Open 2026–27 <svg aria-hidden="true"><use href="#star"/></svg></span><span>Admissions Open 2026–27 <svg aria-hidden="true"><use href="#star"/></svg></span></div></div>
-</section>
-
-<footer class="site">
-  <div class="wrap">
-    <p class="f-see">We'd love to see you at: <a class="f-pill" href="https://www.google.com/maps/search/?api=1&amp;query=Sadhu+Vaswani+International+School+Bangalore">Bettahalsur, Yelahanka <svg aria-hidden="true"><use href="#arrow-ne"/></svg></a></p>
-    <div class="f-info">
-      <div class="f-social">
+<footer class="ft">
+  <div class="wrap ft-grid">
+    <div class="ft-id">
+      <span class="ft-badge"><img src="logo/logo-mark-white.png" width="1200" height="818" alt="Sadhu Vaswani International School" loading="lazy"></span>
+      <div class="ft-social">
         <a href="https://www.facebook.com/svisbangalore" target="_blank" rel="noopener" aria-label="Facebook"><svg aria-hidden="true"><use href="#i-fb"/></svg></a>
         <a href="https://www.instagram.com/svisbangalore" target="_blank" rel="noopener" aria-label="Instagram"><svg aria-hidden="true"><use href="#i-ig"/></svg></a>
         <a href="https://www.linkedin.com/company/svisbangalore" target="_blank" rel="noopener" aria-label="LinkedIn"><svg aria-hidden="true"><use href="#i-li"/></svg></a>
         <a href="https://www.youtube.com/@SVISBangalore" target="_blank" rel="noopener" aria-label="YouTube"><svg aria-hidden="true"><use href="#i-yt"/></svg></a>
-        <a href="https://twitter.com/SVISBangalore" target="_blank" rel="noopener" aria-label="X"><svg aria-hidden="true"><use href="#i-x"/></svg></a>
       </div>
-      <p>No 348/1 &amp; 348/2, Bettahalsur Village, Jala Hobli, Yelahanka, Bangalore – 562157</p>
-      <p><a href="tel:+919945448830">+91 99454 48830</a><br><a href="mailto:info@svisbangalore.com">info@svisbangalore.com</a></p>
+      <p class="ico"><svg aria-hidden="true"><use href="#i-pin"/></svg><span>No 348/1 &amp; 348/2, Bettahalsur Village, Jala Hobli, Yelahanka, Bangalore – 562157</span></p>
+      <p class="ico"><svg aria-hidden="true"><use href="#i-phone"/></svg><a href="tel:+919945448830">+91 99454 48830</a></p>
     </div>
-    <div class="f-cells">
-      <a href="mailto:enquiries@svisbangalore.com">Enquire <svg aria-hidden="true"><use href="#star"/></svg></a>
-      <a href="mailto:enquiries@svisbangalore.com?subject=Campus%20tour">Visit <svg aria-hidden="true"><use href="#star"/></svg></a>
-      <a href="https://svisbangalore.com/svis-admission-form/">Apply <svg aria-hidden="true"><use href="#star"/></svg></a>
-    </div>
-    <div class="f-base">
-      <span>© 2026 Sadhu Vaswani International School, Bangalore</span>
-      <nav aria-label="Footer">
-        <a href="facilities.html">Facilities</a>
-        <a href="faq.html">FAQ</a>
-        <a href="https://svisbangalore.com/mandatory-public-disclosure/">Mandatory Public Disclosure</a>
-        <a href="https://svisbangalore.com/privacy-policy/">Privacy Policy</a>
-        <a href="https://svisbangalore.com/careers/">Careers</a>
-      </nav>
+    <div class="ft-map"><iframe title="Map showing Sadhu Vaswani International School, Bangalore" src="https://www.google.com/maps?q=Sadhu+Vaswani+International+School+Bangalore&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+    <div class="ft-links">
+      <p class="ft-h">quick links</p>
+      <ul>
+        <li><a href="admissions.html">Admissions</a></li>
+        <li><a href="about.html#leadership">Our Leadership</a></li>
+        <li><a href="https://svisbangalore.com/careers/">Careers</a></li>
+      </ul>
+      <p>SVIS continues the <b>Mira Movement in Education</b> begun by Sadhu T.L. Vaswani in 1933. Guided by the motto <b>Simplicity and Service; Purity and Prayer</b>, we nurture the mind, heart and soul of every child.</p>
     </div>
   </div>
+  <div class="wrap ft-badges">
+    <span><b>CBSE</b>Grades 1–11</span>
+    <span><b>IGCSE</b>Grade 8 onwards</span>
+    <span><b>IGBC Platinum</b>Green campus</span>
+  </div>
+  <div class="wrap ft-base">
+    <span>© 2026 Sadhu Vaswani International School, Bangalore</span>
+    <nav aria-label="Footer">
+      <a href="facilities.html">Facilities</a>
+      <a href="faq.html">FAQ</a>
+      <a href="https://svisbangalore.com/mandatory-public-disclosure/">Mandatory Public Disclosure</a>
+      <a href="https://svisbangalore.com/privacy-policy/">Privacy Policy</a>
+    </nav>
+  </div>
 </footer>
-
-<div class="sticky-cta auto">
-  <a class="btn btn-primary" href="#tour">Schedule a Tour</a>
-  <a class="wa" href="https://wa.me/919945448830" target="_blank" rel="noopener" aria-label="WhatsApp">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.6-1.3.1-.2 0-.4 0-.5L9.2 8c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.9.9-1.1 2.2-.2 3.9a11 11 0 0 0 4.4 4c1.7.8 2.5.9 3.4.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.2-.2Z"/></svg>
-  </a>
-</div>
-
-<script src="assets/svis.js" defer onerror="document.documentElement.classList.remove('js')"></script>
+<script src="assets/home.js" defer></script>
 </body>
 </html>
