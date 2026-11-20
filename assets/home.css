@@ -1,6 +1,6 @@
-/* SVIS homepage. Brand kit colours only: light green #8EC640 (text on it is blue #233f82), #636466 #8a220d #F2B425 #233f82 + white. No dark green. */
+/* SVIS homepage. Palette: light green #8EC640, blue #233f82, yellow #F2B425, orange #E8772E, grey #636466 + white. Text on light green or yellow is blue. No dark green, no maroon. */
 :root{
-  --green:#8EC640; --ink:#233f82; --lime:#8EC640; --grey:#636466; --maroon:#8a220d; --gold:#F2B425; --blue:#233f82;
+  --green:#8EC640; --ink:#233f82; --lime:#8EC640; --grey:#636466; --orange:#E8772E; --gold:#F2B425; --blue:#233f82;
   --g:clamp(20px,5vw,72px); --hd:76px; --ease:cubic-bezier(.2,.7,.1,1);
   --f:"Open Sans",-apple-system,"Segoe UI",sans-serif;
   --deva:"Noto Sans Devanagari","Kohinoor Devanagari","Devanagari Sangam MN",sans-serif;
@@ -69,7 +69,7 @@ section{position:relative}
 .menu-open .m-panel{translate:0 0}
 .m-panel ul{list-style:none;margin:0;padding:0;max-width:440px}
 .m-panel li a{display:block;padding:14px 0;border-bottom:1px solid rgba(35,63,130,.35);font-size:clamp(1.3rem,2vw,1.75rem);font-weight:800;line-height:1.2;text-decoration:none;transition:color .2s,padding .3s var(--ease)}
-.m-panel li a:hover{color:var(--maroon);padding-left:8px}
+.m-panel li a:hover{text-decoration:underline;text-underline-offset:6px;padding-left:8px}
 .m-contact{margin-top:44px;max-width:440px;font-size:.92rem;line-height:1.7}
 .m-contact p{margin:0 0 10px}
 @media(max-width:760px){
@@ -85,7 +85,7 @@ section{position:relative}
 .quick svg{width:20px;height:20px;flex:none}
 .q-apply,.p-blue{background:var(--blue)}
 .quick .q-visit,.pill.p-green{background:var(--green);color:var(--ink)}
-.q-enq,.p-maroon{background:var(--maroon)}
+.quick .q-enq,.pill.p-yellow{background:var(--gold);color:var(--ink)}
 @media(max-width:760px){
   body{padding-bottom:64px}
   .quick{top:auto;bottom:0;left:0;translate:none;flex-direction:row;gap:8px;padding:9px 12px calc(9px + env(safe-area-inset-bottom));background:#fff;box-shadow:0 -2px 14px rgba(99,100,102,.25)}
@@ -112,7 +112,7 @@ section{position:relative}
 /* ---------- shared type ---------- */
 .tt{margin:0;line-height:1.08;font-size:clamp(1.8rem,3vw,2.6rem)}
 .tt span{display:block;font-weight:400;color:var(--grey)}
-.tt b{display:block;font-weight:800;color:var(--maroon);text-transform:uppercase;letter-spacing:.005em}
+.tt b{display:block;font-weight:800;color:var(--orange);text-transform:uppercase;letter-spacing:.005em}
 .tt.c{text-align:center}
 .lead{max-width:44ch;margin:20px 0 0;font-size:1rem;line-height:1.7}
 .lead.c{max-width:62ch;margin-inline:auto;text-align:center}
@@ -121,8 +121,8 @@ section{position:relative}
 .lnk:hover{gap:12px}
 .dot{position:absolute;z-index:0;width:var(--s);height:var(--s);border-radius:50%;background:var(--c);pointer-events:none}
 .arrows{display:flex;gap:10px}
-.arrows button{width:36px;height:36px;border-radius:50%;border:1.5px solid var(--maroon);background:#fff;color:var(--maroon);cursor:pointer;display:grid;place-items:center;transition:background .25s,color .25s}
-.arrows button:hover{background:var(--maroon);color:#fff}
+.arrows button{width:36px;height:36px;border-radius:50%;border:1.5px solid var(--ink);background:#fff;color:var(--ink);cursor:pointer;display:grid;place-items:center;transition:background .25s,color .25s}
+.arrows button:hover{background:var(--ink);color:#fff}
 .arrows svg{width:14px;height:14px}
 .js [data-rv]{opacity:0;translate:0 34px;transition:opacity .9s var(--ease),translate .9s var(--ease)}
 .js [data-rv].in{opacity:1;translate:0 0}
@@ -148,7 +148,7 @@ section{position:relative}
 .v-row{position:sticky;top:calc(var(--hd) + 8px);z-index:1;display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(30px,6vw,90px);align-items:center;width:min(1080px,100% - 2*var(--g));margin:0 auto;padding:16px 0 48px;background:#fff}
 .v-row h3{margin:0;font-size:clamp(1.6rem,2.5vw,2.2rem);line-height:1.12}
 .v-row h3>span{display:block;font-weight:400;color:var(--grey)}
-.v-row h3 b{display:block;font-weight:800;color:var(--maroon);text-transform:uppercase}
+.v-row h3 b{display:block;font-weight:800;color:var(--orange);text-transform:uppercase}
 .v-row [lang=hi]{margin-left:.15em;font-family:var(--deva);font-weight:700;text-transform:none}
 .v-row p{max-width:34ch;margin:14px 0 0}
 .v-row figure{margin:0;aspect-ratio:5/4;overflow:hidden}
@@ -209,8 +209,8 @@ section{position:relative}
 .vo:hover blockquote,.vo:focus blockquote,.vo:focus-within blockquote{opacity:1}
 .vo:hover img{scale:1.05}
 .vo-foot{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:28px}
-.pill-line{display:inline-block;padding:9px 20px;border:1.5px solid var(--maroon);border-radius:999px;color:var(--maroon);font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;text-decoration:none;transition:background .25s,color .25s}
-.pill-line:hover{background:var(--maroon);color:#fff}
+.pill-line{display:inline-block;padding:9px 20px;border:1.5px solid var(--orange);border-radius:999px;color:var(--ink);font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;text-decoration:none;transition:background .25s,color .25s}
+.pill-line:hover{background:var(--orange);color:var(--ink)}
 
 /* ---------- belong CTA ---------- */
 .belong{margin-top:clamp(30px,4vw,60px);padding:clamp(120px,14vw,210px) var(--g) clamp(90px,10vw,150px);overflow:hidden;text-align:center;clip-path:ellipse(110% 100% at 50% 100%)}
@@ -235,7 +235,7 @@ section{position:relative}
 .ft .ico svg{width:17px;height:17px;flex:none;margin-top:3px;color:var(--ink)}
 .ft-map{aspect-ratio:4/3;overflow:hidden;border-radius:6px;background:rgba(99,100,102,.12)}
 .ft-map iframe{width:100%;height:100%;border:0}
-.ft-h{margin:0 0 8px;color:var(--maroon);font-weight:800;text-transform:uppercase;letter-spacing:.04em}
+.ft-h{margin:0 0 8px;color:var(--ink);font-weight:800;text-transform:uppercase;letter-spacing:.04em}
 .ft-links ul{list-style:none;margin:0 0 20px;padding:0}
 .ft-links li a{text-decoration:none}
 .ft-links li a:hover{color:var(--ink);text-decoration:underline}
